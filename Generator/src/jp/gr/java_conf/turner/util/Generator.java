@@ -1,5 +1,5 @@
 /**
- * 
+ * 繝代う繧ｽ繝ｳ鬚ｨ繧ｸ繧ｧ繝阪Ξ繝ｼ繧ｿ繧ｯ繝ｩ繧ｹ
  */
 package jp.gr.java_conf.turner.util;
 
@@ -10,9 +10,9 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.SynchronousQueue;
 
 /**
- * パイソン風ジェネレータクラス
+ * 繝代う繧ｽ繝ｳ鬚ｨ繧ｸ繧ｧ繝阪Ξ繝ｼ繧ｿ繧ｯ繝ｩ繧ｹ
  * 
- * @author TURNER
+ * @author nanakoso
  */
 public abstract class Generator<E> implements Iterable<E> {
 

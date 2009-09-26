@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * @author TURNER
+ * @author nanakoso
  * 
  */
 public class Sample {
@@ -21,9 +21,9 @@ public class Sample {
 
 			@Override
 			public void run() throws InterruptedException {
-				yield("ÇŸÇ∞");
-				yield("Ç”Ç™");
-				yield("Ç‡Ç∞");
+				yield("„Åª„Åí");
+				yield("„Åµ„Åå");
+				yield("„ÇÇ„Åí");
 			}
 		};
 
