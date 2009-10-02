@@ -49,11 +49,8 @@ public abstract class Generator<E> implements Iterable<E> {
 
 			public void run() {
 				try {
-					try {
-						Generator.this.run();
-					} finally {
-						que.put(END_OF_QUE);
-					}
+					Generator.this.run();
+					que.put(END_OF_QUE);
 				} catch (InterruptedException e) {
 					// NOP
 				}
