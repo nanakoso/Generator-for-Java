@@ -43,6 +43,8 @@ public abstract class Generator<E> implements Iterable<E> {
 		que.put(new Maybe(e));
 	}
 
+	private boolean isStarted = false;
+
 	private void execute() {
 		threadPool.execute(new Runnable() {
 
@@ -72,8 +74,6 @@ public abstract class Generator<E> implements Iterable<E> {
 	 * @see java.lang.Iterable#iterator()
 	 */
 	public Iterator<E> iterator() {
-
-		execute();
 
 		return new Iterator<E>() {
 			public boolean hasNext() {
@@ -107,6 +107,10 @@ public abstract class Generator<E> implements Iterable<E> {
 			}
 
 			private Maybe waitNext() throws InterruptedException {
+				if (!isStarted) {
+					isStarted = true;
+					execute();
+				}
 				if (nextOne == null) {
 					nextOne = que.take();
 				}
