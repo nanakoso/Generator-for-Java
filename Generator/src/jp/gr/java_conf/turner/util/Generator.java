@@ -11,7 +11,7 @@ import java.util.concurrent.SynchronousQueue;
 
 /**
  * パイソン風ジェネレータクラス
- * 
+ *
  * @author nanakoso
  */
 public abstract class Generator<E> implements Iterable<E> {
@@ -19,9 +19,9 @@ public abstract class Generator<E> implements Iterable<E> {
 	public static void setExecutor(Executor exec) {
 		threadPool = exec;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 */
 	public Generator() {
 		this(0);
@@ -38,7 +38,6 @@ public abstract class Generator<E> implements Iterable<E> {
 	}
 
 	public abstract void run() throws InterruptedException;
-
 
 	protected void yield(E e) throws InterruptedException {
 		que.put(new Maybe(e));
@@ -58,8 +57,6 @@ public abstract class Generator<E> implements Iterable<E> {
 		});
 	}
 
-
-
 	private class Maybe {
 		private final E e;
 
@@ -68,9 +65,10 @@ public abstract class Generator<E> implements Iterable<E> {
 		}
 
 	}
+
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see java.lang.Iterable#iterator()
 	 */
 	public Iterator<E> iterator() {
